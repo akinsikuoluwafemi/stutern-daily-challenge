@@ -136,3 +136,51 @@
 // console.log(Calculator.add(20, 4));
 // console.log(dividedNum.divide(20, 4));
 
+
+// wednesday 6th 2019, nov
+// Differentiate between a for loop, for each and map in JavaScript.Provide code examples to better illustrate your case.
+let numArr = [1, 2, 3, 4, 5, 6];
+
+for (let i = 0; i < numArr.length; i++){
+    console.log(`${numArr[i]}, index: ${i}`);
+}
+// A forloop only gives you the current Element and the CurrentPosition(index)
+// it is in the Array 
+// 1, index: 0
+// 2, index: 1
+// 3, index: 2
+// 4, index: 3
+// 5, index: 4
+// 6, index: 5
+
+
+
+numArr.forEach((element,index,numArr) => {
+    console.log(`element: ${element}, At index: ${index}, This is a picture of all the array: [${numArr}]`);
+});
+
+// element: 1, At index: 0, This is a picture of all the array: [1, 2, 3, 4, 5, 6]
+//  element: 2, At index: 1, This is a picture of all the array: [1, 2, 3, 4, 5, 6]
+// element: 3, At index: 2, This is a picture of all the array: [1, 2, 3, 4, 5, 6]
+//  element: 4, At index: 3, This is a picture of all the array: [1, 2, 3, 4, 5, 6]
+// element: 5, At index: 4, This is a picture of all the array: [1, 2, 3, 4, 5, 6]
+// element: 6, At index: 5, This is a picture of all the array: [1, 2, 3, 4, 5, 6]
+
+
+
+
+
+// A forEach gives you access to the current element, the position it is 
+//     in the element(index) and the total array being looped over
+
+
+
+
+
+let newNumArr = numArr.map(number => {
+    return number * 2;
+});
+
+console.log(newNumArr)  //[2, 4, 6, 8, 10, 12]
+// A map is an higher other function that creates a new Array entirely.
+// it creates anew array to store the answers,you intend to have.
