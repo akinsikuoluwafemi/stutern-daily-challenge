@@ -184,3 +184,26 @@ let newNumArr = numArr.map(number => {
 console.log(newNumArr)  //[2, 4, 6, 8, 10, 12]
 // A map is an higher other function that creates a new Array entirely.
 // it creates anew array to store the answers,you intend to have.
+
+
+
+
+
+
+// friday 9th of Nov
+// 1. Why do we have to import react in functional components when all we do is return a function.Is it not same as the old vanilla JavaScript ?
+//     2. What do you understand about the this keyword in JavaScript.
+
+
+// We must import React in any component, whether stateful or
+// functional, because importing React from 'react' gives us the power
+// to work with Jsx and write Jsx code. 
+// 2: The this keyword is  very awesome, 
+// if your writing code in a function, the this represents the functioning your
+// currently in, If its a class your working with the this represents the particular class you 
+// are in.If your not in any function or class or obj, or anything, the the this is global(window).
+// With arrow functions, the this is lexical and with a regular function you must bind the this to get
+// a hold of the functionlities the this keyword offers.
+
+
+
