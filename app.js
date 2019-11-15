@@ -207,3 +207,133 @@ console.log(newNumArr)  //[2, 4, 6, 8, 10, 12]
 
 
 
+// Nov 13th 2019
+// 1. What are lifecycle methods in react.
+// 2. In the most recent version of react, how are lifecycle methods implemented.
+// 3. Among the types of react component we have functional and class based components. Convert the following class based component to a functional component and ensure to implement state
+class Stateful Component extends Component {
+ state = {
+   timer: null,
+   visible: false,
+ }
+ showComponent() {
+   const timer = setTimeout(() => {
+     this._handleTimeout()
+   }, 4000)
+   this.setState({
+     timer,
+     visible: true,
+   })
+ }
+ hideComponent() {
+   this.setState({
+     visible: false,
+   })
+ }
+ _handleTimeout() {
+   this.hideComponent()
+ }
+ componentDidMount() {
+   this.showComponent()
+ }
+ render() {
+   const styles = { display: this.state.visible ? 'block' : 'none' }
+   return <div style={styles}>I will hide in 4 seconds.</div>
+ }
+}
+export default Stateful Component
+
+
+
+// A react component can be categorically grouped into  stages,
+//the first is, when the component is mounted, the second is, when its 
+// updating, and the final phase is when its done with the previous two 
+// and its unmounting, during these phases, some events are fired
+// these events are called methods, and they are fired during a react
+// components existence(lifecycle).
+
+
+
+// constructor()
+
+//   static getDerivedStateFromProps(props, state) {
+//     //do stuff here
+// } 
+
+// render() {
+//     return <h1> Hurray! </h1>
+// }
+
+
+// componentDidMount() {
+//     do stuff;
+//   }
+
+// shouldComponentUpdate()
+
+// getSnapshotBeforeUpdate(prevProps, prevState) {
+
+// }
+
+// componentDidUpdate(prevProps, prevState) {
+
+// }
+
+// componentDidMount() {
+    // do stuff
+// }
+
+// static getDerivedStateFromError(error){
+    // do stuff with error
+// }
+
+// componentDidCatch(error, info) {
+
+// }
+
+
+
+
+// friday nov 15th
+// Write a class component to render a functional component, the functional components should render this array['rice', 'beans', 'yam', 'semo'] using a map to render the list on the functional component.
+
+import React from 'react';
+import ReactDom from 'react';
+
+
+const foodItems = ['rice', 'beans', 'yam', 'semo']
+
+function FoodItems() {
+    
+    return (
+        <div>
+            {foodItems.map((food,index) => {
+                return (
+                    <div>{index}: {food}</div>
+                )
+            })}
+
+        </div>
+    )
+}
+
+export default Clock;
+
+
+
+
+class App extends React.Component {
+  
+  render(){
+    return (
+      <div>
+        <FoodItems/>
+      </div>
+    )
+  }
+}
+
+export default App;
+
+
+ReactDom.render(<App />, document.getElementById('root'));
